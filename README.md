@@ -1,14 +1,21 @@
-# 使用protobuf 实现网络数据序列化
-1. Android端protobuf
-2. 服务器端protobuf
+# Tranfer data in Android App with Localhost server
+
+### Android
+1. Create project Android
+2. Add a protobuf dependency to the project
+3. Write the Login.proto file, and the compilation will generate the corresponding class under the build path
+4. Build
+
+### Server
+1. Copy the proto class generated on the Android side
+2. Add CommonConfig parsing
+
+# Run server
+```
+cd protobufserver/
+mvn wrapper:wrapper
+./mvnw clean install
+./mvnw spring-boot:run
+````
 
 
-### Android端protobuf
-1. Android跟目录gradle添加插件
-2. Android项目目录gradle下添加protobuf引用
-3. 编写Login.proto文件，编译会在build路径下生成对应的类
-4. 调用
-
-### 服务器端protobuf
-1. 拷贝Android端生成的proto 类
-2. 添加CommonConfig解析
