@@ -18,6 +18,7 @@ public class HelloController {
         try {
             request.setCharacterEncoding("utf-8");
             Login.LoginRequest loginData = Login.LoginRequest.parseFrom(request.getInputStream());
+            System.out.println("loginData: " + loginData);
 
             if("name".equals(loginData.getUsername()) && "pwd".equals(loginData.getPassword())) {
                 builder.setCode(200).setMsg("login success");
@@ -36,7 +37,7 @@ public class HelloController {
     }
     @RequestMapping("index")
     public String index(HttpServletRequest request) {
-        System.out.println("---------------start login---------------------");
+        System.out.println("---------------start index---------------------");
         return "hello word";
     }
 }

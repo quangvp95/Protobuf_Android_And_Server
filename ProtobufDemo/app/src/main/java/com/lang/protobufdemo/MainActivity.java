@@ -49,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
         Login.LoginRequest loginBuild = Login.LoginRequest.newBuilder().setUsername(username_txt).setPassword(pwd_txt).build();
 
         RequestBody requestBody = FormBody.create(MediaType.get("application/octet-stream"), loginBuild.toByteArray());
-        Request request = new Request.Builder().url("http://172.17.2.36:8080/login").post(requestBody).build();
+
+        // TODO: Need replace localhost to exactly IP address if we want to run app in emulator
+        Request request = new Request.Builder().url("http://localhost:8088/login").post(requestBody).build();
 
 //        Request request = new Request.Builder().url("https://time.geekbang.org/column/article/120928").build();
         Call call = new OkHttpClient().newCall(request);
