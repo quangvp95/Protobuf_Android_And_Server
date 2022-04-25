@@ -27,6 +27,7 @@ public class HelloController {
             }
 
         } catch (Exception e1) {
+            System.out.println("Error: " + e1);
             e1.printStackTrace();
         }
 
